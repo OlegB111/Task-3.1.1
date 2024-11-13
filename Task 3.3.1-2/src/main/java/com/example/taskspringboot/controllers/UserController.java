@@ -58,7 +58,7 @@ public class UserController {
     }
 
     @PostMapping("/edit")
-    public String update(@ModelAttribute("user") User user, BindingResult bindingResult,
+    public String update(@ModelAttribute("user") @Valid User user, BindingResult bindingResult,
                          @RequestParam(value = "id") int id) {
         if (bindingResult.hasErrors())
             return "edit";
